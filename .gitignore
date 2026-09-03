@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -23,3 +23,9 @@ node_modules/
 .idea/
 .vscode/
 *.swp
+
+# Antigravity session cache bridge
+.agents/.agents/
+
+# Assets & Media
+pocket-antigravity-logo.jpg

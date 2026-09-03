@@ -1,0 +1,16 @@
+{
+  "test-output-filter": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python hooks/filter_test_output.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
