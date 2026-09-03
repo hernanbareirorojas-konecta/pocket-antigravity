@@ -8,19 +8,13 @@
 
 *Spend up to 95% fewer tokens per coding session. Maximize context window lifetime without sacrificing reasoning quality or precision.*
 
----
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-[![Google Antigravity](https://img.shields.io/badge/Designed%20For-Google%20Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://cloud.google.com)
-[![Gemini 2.5 Ready](https://img.shields.io/badge/Models-Gemini%202.5%20Flash%20%7C%20Pro-34A853?style=for-the-badge&logo=googlegemini&logoColor=white)](https://ai.google.dev)
-[![Cross-Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com)
-[![Zero External Dependencies](https://img.shields.io/badge/Dependencies-Zero%20(Pure%20Python%203)-555555?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 <p align="center">
   <a href="#-quickstart">🚀 Quickstart</a> •
+  <a href="#-benchmarks-measured-not-vibes">📊 Benchmarks</a> •
   <a href="#-the-token-drain-problem-vs-pocket-antigravity">⚡ Problem vs Solution</a> •
   <a href="#-the-6-core-engineering-pillars">🛡️ The 6 Pillars</a> •
-  <a href="#-benchmarks-measured-not-vibes">📊 Benchmarks</a> •
   <a href="#-repository-structure">📁 Repository Structure</a>
 </p>
 
@@ -30,6 +24,44 @@
 
 > [!TIP]
 > **Zero Setup, Instant ROI:** Drops directly into any existing repository (Python, TypeScript, Go, Rust, Java, .NET, etc.). Automatically intercepts verbose test outputs, shields background indexers from multi-megabyte lockfiles, enforces subagent economics, and aligns prompts with Google's 90% cache discount.
+
+---
+
+## 🚀 Quickstart
+
+### Step 1: Drop into any project
+Copy the baseline files into your project root:
+```bash
+cp -r pocket-antigravity/ANTIGRAVITY.md \
+      pocket-antigravity/GEMINI.md \
+      pocket-antigravity/.geminiignore \
+      pocket-antigravity/.antigravityignore \
+      pocket-antigravity/.agents/ \
+      /path/to/your-project/
+```
+
+### Step 2: Auto-detect project with `pocket-init`
+Ask Antigravity in your chat:
+> *"Run pocket-init"*
+
+The native skill explores your project, detects your ecosystem (Node, Python, Rust, Go, JVM, .NET, etc.), extracts verified build/test commands, and populates [`ANTIGRAVITY.md`](ANTIGRAVITY.md) and [`GEMINI.md`](GEMINI.md) without hallucinating.
+
+### Step 3: Code normally
+Run your commands and tests as usual. Antigravity will automatically filter test outputs, respect file ignore boundaries, and execute with minimum token overhead.
+
+---
+
+## 📊 Benchmarks (Measured, Not Vibes)
+
+Empirically measured using Gemini 2.5 Flash and Pro models in Google Antigravity:
+
+| Optimization Vector | Raw Baseline | With pocket-antigravity | Efficiency Gain |
+| :--- | :--- | :--- | :--- |
+| **Startup Prompt Overhead** | 18,500 tokens | **~850 tokens** | **-95.4%** |
+| **Test Output (220-test suite)** | 244 lines (4,450 tokens) | **16 lines (210 tokens)** | **-95.3%** |
+| **Code Function Search** | 32,850 tokens (subagent) | **185 tokens (direct grep)** | **-99.4%** |
+| **Data Serialization (50 records)** | 4,210 tokens (formatted JSON) | **1,890 tokens (pipe table)** | **-55.1%** |
+| **Vertex AI Prefix Cache Hit** | Full price ($0.15 / Mtok) | Exact prefix match ($0.015 / Mtok) | **90% discount** |
 
 ---
 
@@ -143,44 +175,6 @@ pocket-antigravity/
 ├── LICENSE                                 # MIT License
 └── README.md
 ```
-
----
-
-## 🚀 Quickstart
-
-### Step 1: Drop into any project
-Copy the baseline files into your project root:
-```bash
-cp -r pocket-antigravity/ANTIGRAVITY.md \
-      pocket-antigravity/GEMINI.md \
-      pocket-antigravity/.geminiignore \
-      pocket-antigravity/.antigravityignore \
-      pocket-antigravity/.agents/ \
-      /path/to/your-project/
-```
-
-### Step 2: Auto-detect project with `pocket-init`
-Ask Antigravity in your chat:
-> *"Run pocket-init"*
-
-The native skill explores your project, detects your ecosystem (Node, Python, Rust, Go, JVM, .NET, etc.), extracts verified build/test commands, and populates [`ANTIGRAVITY.md`](ANTIGRAVITY.md) and [`GEMINI.md`](GEMINI.md) without hallucinating.
-
-### Step 3: Code normally
-Run your commands and tests as usual. Antigravity will automatically filter test outputs, respect file ignore boundaries, and execute with minimum token overhead.
-
----
-
-## 📊 Benchmarks (Measured, Not Vibes)
-
-Empirically measured using Gemini 2.5 Flash and Pro models in Google Antigravity:
-
-| Optimization Vector | Raw Baseline | With pocket-antigravity | Efficiency Gain |
-| :--- | :--- | :--- | :--- |
-| **Startup Prompt Overhead** | 18,500 tokens | **~850 tokens** | **-95.4%** |
-| **Test Output (220-test suite)** | 244 lines (4,450 tokens) | **16 lines (210 tokens)** | **-95.3%** |
-| **Code Function Search** | 32,850 tokens (subagent) | **185 tokens (direct grep)** | **-99.4%** |
-| **Data Serialization (50 records)** | 4,210 tokens (formatted JSON) | **1,890 tokens (pipe table)** | **-55.1%** |
-| **Vertex AI Prefix Cache Hit** | Full price ($0.15 / Mtok) | Exact prefix match ($0.015 / Mtok) | **90% discount** |
 
 ---
 
