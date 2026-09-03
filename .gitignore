@@ -26,6 +26,3 @@ node_modules/
 
 # Antigravity session cache bridge
 .agents/.agents/
-
-# Assets & Media
-pocket-antigravity-logo.jpg

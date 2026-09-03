@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./pocket-antigravity-logo.jpg" alt="pocket-antigravity banner" width="100%" style="border-radius: 14px; box-shadow: 0 8px 24px rgba(0, 180, 255, 0.25); margin-bottom: 24px;" />
+<img src="logo/pocket-antigravity-logo.jpg" alt="pocket-antigravity banner" width="100%" />
 
 # 🪙 pocket-antigravity
 
@@ -116,7 +116,8 @@ flowchart TD
 
 ```text
 pocket-antigravity/
-├── pocket-antigravity-logo.jpg             # Project header asset
+├── logo/
+│   └── pocket-antigravity-logo.jpg         # Project header banner
 ├── ANTIGRAVITY.md                          # Ultra-lean root instructions (~35 lines)
 ├── GEMINI.md                               # Dual root rule file for Antigravity hierarchical discovery
 ├── .geminiignore                           # Blocks indexers from ingesting dependencies, lockfiles, & binaries
