@@ -13,9 +13,25 @@
 
 ---
 
-## 🚀 Quickstart
+## 🚀 Quickstart (One-Line Install)
 
-### 1. Copy into your project
+Run this single command inside the root of any existing or new project:
+
+**Linux / macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.ps1 | iex
+```
+
+*That's it!* The installer automatically copies the configuration, shields indexers with `.geminiignore`, and auto-configures `ANTIGRAVITY.md` for your project ecosystem. Open Google Antigravity and start coding immediately with up to 95% token savings.
+
+<details>
+<summary><strong>Manual Installation (without scripts)</strong></summary>
+
 ```bash
 cp -r pocket-antigravity/ANTIGRAVITY.md \
       pocket-antigravity/GEMINI.md \
@@ -24,15 +40,8 @@ cp -r pocket-antigravity/ANTIGRAVITY.md \
       pocket-antigravity/.agents/ \
       /path/to/your-project/
 ```
-
-### 2. Auto-detect project configuration
-Ask Antigravity in your chat:
-> *"Run pocket-init"*
-
-The skill inspects your project, detects your ecosystem (Node, Python, Rust, Go, JVM, etc.), and populates `ANTIGRAVITY.md` and `GEMINI.md` with verified commands.
-
-### 3. Code normally
-Antigravity automatically filters test outputs, respects file exclusions, and minimizes token usage in the background.
+Then ask Antigravity in your chat: *"Run pocket-init"*
+</details>
 
 ---
 
