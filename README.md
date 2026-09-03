@@ -5,7 +5,7 @@
 # 🪙 pocket-antigravity
 
 **Minimalist token optimization framework for Google Antigravity & Gemini models.**  
-*Cut up to 95% of wasted tokens across turns, test runs, background indexers, and subagents.*
+*Cut up to 95% of wasted tokens across turns, background indexers, and subagents.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
@@ -13,59 +13,70 @@
 
 ---
 
-## 🚀 Quickstart
+## 🎯 Pure Markdown. Zero Scripts. Zero Dependencies.
 
-`pocket-antigravity` is **100% native with ZERO Python dependency**. It consists of lean markdown directives, indexer firewalls, and optimization rules.
+`pocket-antigravity` is **100% pure Markdown and configuration files**.
 
-### Option 1: Per-Project Installation (Recommended)
+- ❌ **No installer scripts** (no `.sh`, `.ps1`, or `.py`)
+- ❌ **No terminal commands or execution privileges required**
+- ❌ **No runtime dependencies** (no Python, Node, etc.)
 
-Run inside the root of any existing or new project:
-
-**Linux / macOS (Native Bash):**
-```bash
-curl -fsSL https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.sh | bash
-```
-
-**Windows (Native PowerShell):**
-```powershell
-irm https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.ps1 | iex
-```
-
-*That's it!* The installer copies the baseline instructions, sets up `.geminiignore`, and auto-configures `ANTIGRAVITY.md` and `GEMINI.md` for your detected project ecosystem (Node/npm, Python, Rust, Go).
+Token savings are achieved strictly through **prompt engineering, context discipline, and indexer exclusion rules** loaded and interpreted natively by Google Antigravity and Gemini models.
 
 ---
 
-### Option 2: Global Zero-Copy Installation (No files added to repos)
+## 📦 The Fundamental Files (What to download)
 
-Ideal for consultants, agencies, or client repositories where you cannot commit files into their git history. Installs rules globally into `~/.gemini/config/`:
+You only need to download or copy these core files into your project:
 
-**Linux / macOS:**
-```bash
-curl -fsSL https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.sh | bash -s -- --global
-```
-
-**Windows (PowerShell):**
-```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/hernanbareirorojas-konecta/pocket-antigravity/main/install.ps1))) -Global
-```
-*(Or if you have the repo cloned locally: `.\install.ps1 -Global`)*
+| File / Folder | Purpose & Token Savings |
+| :--- | :--- |
+| **[`ANTIGRAVITY.md`](ANTIGRAVITY.md)** *(or [`GEMINI.md`](GEMINI.md))* | **Lean Root Directive (~35 lines):** Replaces verbose system instructions. Enforces progressive disclosure, subagent economics, and context hygiene. |
+| **[`.geminiignore`](.geminiignore)** & **[`.antigravityignore`](.antigravityignore)** | **Indexer Firewall:** Blocks Antigravity from burning tens of thousands of tokens indexing `node_modules/`, lockfiles (`package-lock.json`), binaries, and logs. |
+| **[`.agents/rules/token-efficiency.md`](.agents/rules/token-efficiency.md)** | **Agent Behavioral Rules:** Hard guidelines for subagents (~30k token economic threshold), targeted line slicing (`StartLine`/`EndLine`), and direct answers. |
+| **[`docs/`](docs/)** *(Optional)* | **On-Demand Reference Guides:** Technical documentation (caching, benchmarks, architecture). Loaded strictly when the agent is actively designing or debugging, never upfront. |
 
 ---
 
-<details>
-<summary><strong>Manual Installation (Direct Copy without scripts)</strong></summary>
+## 🚀 How to Use It
 
-```bash
-cp -r pocket-antigravity/ANTIGRAVITY.md \
-      pocket-antigravity/GEMINI.md \
-      pocket-antigravity/docs/ \
-      pocket-antigravity/.geminiignore \
-      pocket-antigravity/.antigravityignore \
-      pocket-antigravity/.agents/ \
-      /path/to/your-project/
+### Option 1: Drop into Your Project (Recommended)
+
+Simply download or copy the fundamental files into your project root:
+
+```text
+your-project/
+├── ANTIGRAVITY.md              # Root instructions (~35 lines)
+├── GEMINI.md                   # Dual root rule file (mirrors ANTIGRAVITY.md)
+├── .geminiignore               # Excludes dependencies & lockfiles from indexer
+├── .antigravityignore          # IDE/CLI indexer exclusions
+├── .agents/
+│   └── rules/
+│       └── token-efficiency.md # Subagent & context discipline rules
+└── docs/                       # (Optional) Reference guides loaded on demand
 ```
-Then ask Antigravity in your chat: *"Run pocket-init"*
-</details>
+
+**That's it!** Open Google Antigravity in your project. It will automatically discover the files and enforce the token-saving rules immediately.
+
+> **💡 Quick Tip:** In `ANTIGRAVITY.md`, optionally fill in the 3 commented command lines (`Test`, `Build`, `Lint`) for your project, or simply tell Antigravity in the chat:
+> *"Read ANTIGRAVITY.md and configure the test and build commands for this project."*
+
+---
+
+### Option 2: Global Zero-Copy (No files added to your project)
+
+If you work on client repositories, shared corporate repos, or open-source projects where you cannot commit external files, configure your rules globally once:
+
+Copy `token-efficiency.md` and `GEMINI.md` directly into your user's Antigravity configuration directory:
+
+- **Windows:**
+  - Put `token-efficiency.md` into `C:\Users\<YourUser>\.gemini\config\rules\token-efficiency.md`
+  - Put `ANTIGRAVITY.md` into `C:\Users\<YourUser>\.gemini\config\GEMINI.md`
+- **macOS / Linux:**
+  - Put `token-efficiency.md` into `~/.gemini/config/rules/token-efficiency.md`
+  - Put `ANTIGRAVITY.md` into `~/.gemini/config/GEMINI.md`
+
+Every Antigravity session on your machine will automatically benefit from token optimization across all your projects without modifying any git repository.
 
 ---
 
@@ -74,7 +85,6 @@ Then ask Antigravity in your chat: *"Run pocket-init"*
 | Metric | Without pocket-antigravity | With pocket-antigravity | Reduction |
 | :--- | :--- | :--- | :--- |
 | **Startup Prompt Overhead** | ~18,500 tokens | **~850 tokens** | **-95.4%** |
-| **Test Output (220 tests)** | 244 lines (4,450 tokens) | **16 lines (210 tokens)** | **-95.3%** |
 | **Targeted Code Search** | ~32,850 tokens (subagent) | **185 tokens (direct grep)** | **-99.4%** |
 | **Data Serialization (50 items)** | 4,210 tokens (raw JSON) | **1,890 tokens (pipe table)** | **-55.1%** |
 | **Repeated Queries** | Full input cost ($0.15/MTok) | Exact byte-prefix match | **90% cache discount** |
@@ -88,7 +98,6 @@ Then ask Antigravity in your chat: *"Run pocket-init"*
 3. **🧱 Indexer Firewall:** `.geminiignore` and `.antigravityignore` block huge lockfiles, dependencies (`node_modules/`), and coverage files from being parsed into context.
 4. **🎯 Surgical Context Hygiene:** Enforces reading targeted line slices (`StartLine`/`EndLine`) instead of dumping entire files.
 5. **⚡ Prompt Cache Alignment:** Maintains byte-prefix stability to maximize Vertex AI 90% prompt caching discounts.
-6. **🧪 Test Condenser Hook (Optional):** A lightweight hook (`.agents/hooks/filter_test_output.py`) can intercept test runs (`pytest`, `npm test`, `cargo test`, `vitest`, etc.) to strip noisy passing tests. *Note: This is strictly optional—the core framework is 100% prompt engineering and Markdown with zero runtime requirements.*
 
 ---
 
@@ -102,9 +111,7 @@ pocket-antigravity/
 ├── GEMINI.md                               # Dual root rule file
 ├── .geminiignore                           # Indexer exclusions (lockfiles, dependencies)
 ├── .antigravityignore                      # IDE/CLI indexer exclusions
-├── .agents/                                # Customization directory
-│   ├── hooks.json                          # PreToolUse test filter hook
-│   ├── hooks/filter_test_output.py         # Cross-platform test condenser
+├── .agents/                                # Antigravity rules directory
 │   ├── rules/token-efficiency.md           # Context & subagent discipline rules
 │   └── skills/pocket-init/SKILL.md         # Auto-initialization skill
 ├── docs/                                   # On-demand reference guides

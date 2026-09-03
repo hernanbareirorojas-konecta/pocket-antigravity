@@ -77,7 +77,7 @@ When passing structured datasets between backend APIs, tools, and models:
 
 - **MCP Schema Burden:** Every connected MCP server injects its complete tool schemas on **every turn**, whether invoked or not. 3 idle MCP servers can easily consume 4,000–8,000 tokens per interaction.
 - **Prefer Native CLI Tools:** Use native CLI binaries (`gh`, `gcloud`, `docker`, `git`) via `run_command` instead of heavy MCP server wrappers. The CLI costs 0 tokens when idle.
-- **Output Condensation:** Test suites and build tools produce hundreds of noisy lines. Using `.agents/hooks/filter_test_output.py` condenses output down to failure lines and summary counts, cutting 90–95% of test run tokens.
+- **Output Condensation:** Test suites and build tools produce hundreds of noisy lines. Enforcing targeted test runner flags or harness prompt rules condenses output down to failure lines and summary counts, cutting 90–95% of test run tokens.
 
 ---
 

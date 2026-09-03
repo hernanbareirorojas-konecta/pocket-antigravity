@@ -49,7 +49,7 @@ Antigravity offers two mechanisms for asynchronous and secondary execution:
 | **Use Case** | Complex multi-domain research needing LLM reasoning | Long builds, dev servers, test suites, cron jobs |
 
 > [!TIP]
-> Never launch a subagent to run a build or test suite. Run it as a background task (`run_command` with `manage_task`) or directly through the `filter_test_output.py` hook.
+> Never launch a subagent to run a build or test suite. Run it as a background task (`run_command` with `manage_task`) or directly via quiet/filter flags.
 
 ---
 

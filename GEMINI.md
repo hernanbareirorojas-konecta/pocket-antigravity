@@ -37,5 +37,5 @@ redundant harness instructions.
 
 <!-- fill per project:
 - Framework: pytest
-- Runner hook: .agents/hooks/filter_test_output.py active
+- Output: Output only failing test cases and 1-line root summary. Omit passing tests.
 -->

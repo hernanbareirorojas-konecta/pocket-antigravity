@@ -21,7 +21,7 @@ Measured by token count of automatically loaded files on the first turn:
 
 Measured using a realistic synthetic test suite of 220 test cases with 3 genuine failures and stack traces:
 
-| Metric | Raw Unfiltered Output | Through `filter_test_output.py` | Reduction |
+| Metric | Raw Unfiltered Output | With pocket-antigravity Filtering | Reduction |
 | :--- | :--- | :--- | :--- |
 | **Lines in Context** | 244 lines | 16 lines | **-93.4%** |
 | **Characters** | 17,781 chars | 842 chars | **-95.2%** |
